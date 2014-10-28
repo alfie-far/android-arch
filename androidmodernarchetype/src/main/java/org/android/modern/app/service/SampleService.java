@@ -2,6 +2,7 @@ package org.android.modern.app.service;
 
 import android.database.Observable;
 import org.android.modern.app.service.remote.SampleServiceClient;
+import org.androidannotations.annotations.EBean;
 import retrofit.Callback;
 import retrofit.client.Response;
 import retrofit.http.Path;
@@ -18,13 +19,14 @@ import java.util.Map;
  * @version 1.0
  * @since it-5
  */
+@EBean
 public class SampleService implements SampleServiceClient {
 
     @Inject
     SampleServiceClient sampleServiceClient;
 
     @Override
-    public List<Object> listUserReps(@Path("user") String user) {
+    public List<Object> listUserReps(String user) {
         return sampleServiceClient.listUserReps(user);
     }
 
@@ -36,13 +38,13 @@ public class SampleService implements SampleServiceClient {
 
     @Override
 
-    public List<Object> groupList(@Path("id") int groupId) {
+    public List<Object> groupList(int groupId) {
         return sampleServiceClient.groupList(groupId);
     }
 
     @Override
 
-    public List<Object> groupList(@Path("id") int groupId, @Query("sort") String sort) {
+    public List<Object> groupList(int groupId, String sort) {
         return sampleServiceClient.groupList(groupId, sort);
     }
 

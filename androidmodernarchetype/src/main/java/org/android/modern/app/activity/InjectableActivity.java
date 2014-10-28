@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentActivity;
 import android.view.View;
 import android.view.ViewGroup;
 import butterknife.ButterKnife;
-import org.android.modern.configuration.Application;
 
 /**
  * @author amin rahimi farzin
@@ -16,8 +15,6 @@ public class InjectableActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Application.getApplication().inject(this);
-
     }
 
     /**
