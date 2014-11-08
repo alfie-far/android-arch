@@ -1,4 +1,4 @@
-package org.android.modern.app.activity;
+package org.android.modern.app.activity.injectionhelper;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import butterknife.ButterKnife;
 
 /**
+ * This will provide injection capability into activities with butterknife library
+ *
  * @author amin rahimi farzin
  * @version 1.0
  */

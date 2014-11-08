@@ -3,5 +3,6 @@
 
     <string name="app_name">AndroidModernArchetype</string>
     <string name="hello_world">Hello world!</string>
+    <string name="some_info">Did you like it? if not, tell me what can I do for you?</string>
 
 </resources>

@@ -17,6 +17,33 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Startup listeners section -->
+        <receiver
+            android:name=".modern.configuration.startup.SampleStartupReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="org.android.APPLICATION_STARTUP_BROADCAST_ACTION" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".modern.configuration.startup.SampleStartupReceiver2"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="org.android.APPLICATION_STARTUP_BROADCAST_ACTION" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".modern.configuration.objectstore.CouchbaseStartupInitializer_"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="org.android.APPLICATION_STARTUP_BROADCAST_ACTION" />
+            </intent-filter>
+        </receiver>
+        <!-- Startup listeners section -->
     </application>
 
 </manifest>
