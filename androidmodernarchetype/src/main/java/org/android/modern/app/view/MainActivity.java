@@ -1,4 +1,4 @@
-package org.android.modern.app.activity;
+package org.android.modern.app.view;
 
 import android.app.NotificationManager;
 import android.os.Bundle;
@@ -8,13 +8,17 @@ import android.widget.TextView;
 import butterknife.InjectView;
 import butterknife.OnClick;
 import org.android.R;
-import org.android.modern.app.activity.injectionhelper.InjectableActivity;
+import org.android.modern.app.view.injectionhelper.InjectableActivity;
 import org.android.modern.app.controller.SampleController;
 import org.android.modern.configuration.Application;
 import org.androidannotations.annotations.*;
+import org.androidannotations.annotations.sharedpreferences.Pref;
 
 @EActivity(R.layout.activity_main)
 public class MainActivity extends InjectableActivity {
+
+    @Pref
+    org.android.modern.app.preferences.SamplePreference_ samplePreference;
 
     @App
     Application application;
@@ -45,9 +49,13 @@ public class MainActivity extends InjectableActivity {
 
     @OnClick(R.id.greeting_action)
     public void changeGreetingText(View view) {
-        greetingTextView.setText("greeting text changed");
-        textView.setText("it seems you liked it :-)");
+        greetingTextView.setText("greeting text changed, sample" +
+                " preference nick name is" + samplePreference.nickName().get());
+
+        textView.setText("it seemssss you liked it :-)");
         doSomethingInBackground("");
+        samplePreference.edit().nickName().put("khubi");
+        samplePreference.edit().apply();
     }
 
     @OnClick(R.id.sample_nosql_action)

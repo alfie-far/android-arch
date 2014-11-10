@@ -6,7 +6,6 @@ package org.android.modern.configuration;
  *
  * @author amin rahimi farzin
  * @version 1.0
- * @since it-5
  */
 public final class AvailableConstants {
 
