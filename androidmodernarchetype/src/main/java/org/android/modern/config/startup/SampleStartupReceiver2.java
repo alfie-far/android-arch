@@ -1,4 +1,4 @@
-package org.android.modern.configuration.startup;
+package org.android.modern.config.startup;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
